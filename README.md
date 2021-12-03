@@ -8,12 +8,12 @@ Data Source:
 
 * Events: 
      * We have created a custom file which illustrates the historical events in the following countries:
-            * Afghanistan. 
-            * Libya. 
-            * Iraq. 
-            * Germany. 
-            * Myanmar. 
-            * Venezuela. 
+            * Afghanistan.<br>
+            * Libya.<br>
+            * Iraq. <br>
+            * Germany. <br>
+            * Myanmar. <br>
+            * Venezuela. <br>
      * References:
           * https://www.bbc.com/news/world-middle-east-14546763
           * https://www.bbc.com/news/world-south-asia-12024253
