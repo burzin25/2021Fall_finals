@@ -109,7 +109,7 @@ It is a common notion that women in advanced societies bear child in a much olde
 
 #### We expect the mean age of childbearing to be higher in well-developed societies. Hence, the mean age of childbearing must have increased post the fall of the Berlin Wall in Germany in 1989. While in all the subsequent events which swayed away from democratic systems, and those that occurred in under-developed or developing countries, the mean age of childbearing remained constant or decreased.
 
-<img alt="Mean Child Bearing Age [Germany VS Afghanistan]" src="./Images/Child_bearing_ger_afg.PNG" title="Mean Child Bearing Age [Germany VS Afghanistan]"/>
+<img alt="Mean Child Bearing Age [Germany VS Afghanistan]" src="./Images/Child_bearing_ger_afg.png" title="Mean Child Bearing Age [Germany VS Afghanistan]"/>
 <img alt="Mean Child Bearing Age [Germany VS Afghanistan] Table" src="./Images/Child_bearing_ger_afg_table.PNG" title="Mean Child Bearing Age [Germany VS Afghanistan] Table"/>
 
 #### Observations:
@@ -119,7 +119,7 @@ It is a common notion that women in advanced societies bear child in a much olde
 
 Note : The NaNs being displayed for pre and post values in the aforementioned and subsequent dataframes for periods which are not at the extremes, are due to the fact that there are consecutive periods which have events present. Hence, in this case the statistics relating to a particular event are not being considered in either pre or post cases. Instead they are only being used as reference.
 
-<img alt="Mean Child Bearing Age [Germany VS Iraq]" src="./Images/Child_bearing_ger_Iraq.PNG" title="Mean Child Bearing Age [Germany VS Iraq]"/>
+<img alt="Mean Child Bearing Age [Germany VS Iraq]" src="./Images/Child_bearing_ger_Iraq.png" title="Mean Child Bearing Age [Germany VS Iraq]"/>
 <img alt="Mean Child Bearing Age [Germany VS Iraq] Table" src="./Images/Child_bearing_ger_Iraq_table.PNG" title="Mean Child Bearing Age [Germany VS Iraq] Table"/>
 
 #### Observations
@@ -129,7 +129,7 @@ Note : The NaNs being displayed for pre and post values in the aforementioned an
 * Thus, we can say our hypothesis can be rejected in this case.
 
 
-<img alt="Mean Child Bearing Age [Germany VS Myanmar]" src="./Images/Child_bearing_ger_Myan.PNG" title="Mean Child Bearing Age [Germany VS Myanmar]"/>
+<img alt="Mean Child Bearing Age [Germany VS Myanmar]" src="./Images/Child_bearing_ger_Myan.png" title="Mean Child Bearing Age [Germany VS Myanmar]"/>
 <img alt="Mean Child Bearing Age [Germany VS Myanmar] Table" src="./Images/Child_bearing_ger_Myan_table.PNG" title="Mean Child Bearing Age [Germany VS Myanmar] Table"/>
 
 
@@ -140,7 +140,7 @@ Note : The NaNs being displayed for pre and post values in the aforementioned an
 * Thus, we can not clearly reject the hyothesis here as there is no significant change for Myanmar.
 
 
-<img alt="Mean Child Bearing Age [Germany VS Libya]" src="./Images/Child_bearing_ger_Libya.PNG" title="Mean Child Bearing Age [Germany VS Libya]"/>
+<img alt="Mean Child Bearing Age [Germany VS Libya]" src="./Images/Child_bearing_ger_Libya.png" title="Mean Child Bearing Age [Germany VS Libya]"/>
 <img alt="Mean Child Bearing Age [Germany VS Libya] Table" src="./Images/Child_bearing_ger_Libya_table.PNG" title="Mean Child Bearing Age [Germany VS Libya] Table"/>
 
 
@@ -150,7 +150,7 @@ Note : The NaNs being displayed for pre and post values in the aforementioned an
 * There is a slight decrease in the child bearing age for Libya towards the end of period 2015-2020
 * Thus, we can reject the hypothesis in this case.
 
-<img alt="Mean Child Bearing Age [Germany VS Venezuela]" src="./Images/Child_bearing_ger_ven.PNG" title="Mean Child Bearing Age [Germany VS Venezuela]"/>
+<img alt="Mean Child Bearing Age [Germany VS Venezuela]" src="./Images/Child_bearing_ger_ven.png" title="Mean Child Bearing Age [Germany VS Venezuela]"/>
 <img alt="Mean Child Bearing Age [Germany VS Venezuela] Table" src="./Images/Child_bearing_ger_ven_table.PNG" title="Mean Child Bearing Age [Germany VS Venezuela] Table"/>
 
 
