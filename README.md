@@ -1,5 +1,9 @@
 # Analysis : Effects of Regime changes on National Social Factors
 
+## Authors
+* Veeral jain (reev277)
+* Rishabh Tripathi (rishabh1894)
+
 Impact on society of historical regime changes in countries
 
 Data Source:
@@ -28,27 +32,25 @@ August 2021, U.S. officially withdraws from Afghanistan after 20 years. Ever sin
 Through this project, we aim to verify the affects of such drastic regime changes which have occured in last 70 years in some of the countries of the world. 
     
 We are referring to the data archive provided by the United Nations: Department of Economic and Social Affairs. 
+### Data Source:
 
-We have planned to explore and correlate some of the following characteristics:
+* [Data](https://population.un.org/wpp/Download/Standard)
 
-* Mortality Rate
-    * Deaths by gender
-    * Deaths by age groups 
-    * Life-Expectancy at various stages of life
-    * Infant Mortality Rate
-* Adult Age Mortality
-    * Population
-    * Total Population
-    * Total Population by gender
-    * Population Growth Rate
-* Migration
-    * Net Migration Rate
-    * Net Number of Immigrants
-    * Fertility
-* Number of births
-    * Sex ratio at birth 
-    * Age specific fertility rate
-    * Mean age of childbearing
+### Summary of Regime changes
+
+The datasets for the below 6 countries from different continents have been manually created. 
+  * Iraq
+  * Myanmar
+  * Afghanistan
+  * Libya
+  * Germany
+  * Venezuela
+
+An exhaustive list of events which can be considered as turning points in their respective countries has been considered using BBC website as our reference and established timelines of historical events of the mentioned countries.
+
+## Getting Started
+1. Open the command terminal in the required folder and clone the repository using command
+    
 
 ## Hypotheses:
 
