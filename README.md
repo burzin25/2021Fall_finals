@@ -86,16 +86,37 @@ From the above analysis, we can observe that most of the countries had a negativ
 
 We can notice that Germany had a good positive relation between life expectancy and migration which was the only case where our hypothesis satisfied. Apart from that, we can not prove our hypothesis based on the given data and plots which means, the hypothesis is rejected. One thing to notice is that, there were few countries where the migration data were nearly 0 during initial period and that might have impacted the outcome. Also, Germany is ony the countries counted in the developed nations where as others are under-developed or developing nations. This along with other unknown factors might have impacted the correlation as well.
 
+### Hypothesis 3
+Since Angela Merkel was the First Woman Chancellor of Germany elected in 2005, it is a reasonable assumption that it would have led to a society which is oriented towards the interest of women. Keeping that in mind, we expect the women in Germany to flourish and hence, below is the third hypothesis.
 
+#### Post the election of Angela Merkel as the first woman Chancellor of Germany in 2005, the female mortality rate before age 60 has decreased along with it being lower than the male mortality rate before age 60, post Angela Merkel's election.
+<img alt="Germany Mortality before 60 [Male VS Female]" src="./Images/Germany_mortality_m_f_bf_60.PNG" title="Germany Mortality before 60 [Male VS Female]"/>
+In the above visuals, we can observe that there is continuous decrease in the mortality before 60 for both males and females. The vertical dashed lines show the regime changes in Germany. While pondering upon the data, we can observe that after the election of Angela Merkel as the first Chancellor, the female mortality under 60 has decreased. Also we can notice from the graph that the difference between the male and female mortality under 60 has decreased.
+To understand more about the data and the comparison for the hypothesis, below is a table which depicts the percentage increase/decrease in the pre/post event.
 
+<img alt="Germany Mortality before 60 [Male VS Female] Table" src="./Images/Germany_mortality_m_f_bf_60_table.PNG" title="Germany Mortality before 60 [Male VS Female] Table"/>
+The above table helps us in getting a better insights of how the mortality rate changes within two events. This can be calculated for any country and social factor due to the dynamic ability of the function. As we can observe, there is 25.84% decrease in the female mortality under 60 after the appointment of first female Chancellor
+The above analysis shows that the hypothesis can be accepted as after Angela Merkel was elected, there is decrease in female mortality under 60 and along with that, there is decrease in the difference of the mortality as well between male and female. One thing to note here is when we were calculating the pre and post of mortality for an event, we are not considering those event period into consideration for the calculation. Due to this, we can observe NaN values for continuous periods as shown in Afghanistan.
 
-* Hypothesis 1: We expect the adult mortality rate to decrease post the killing of Col Gaddafi in Libya in 2011.
+### Hypothesis 4 
+It is a common notion that women in advanced societies bear child in a much older age than the women in underdeveloped or developing countries. Hence, below is the final hypothesis.
 
-* Hypothesis 2: In most of the cases with an increase in life-expectancy rate, the net migration rate decreases i.e. life-expectancy rate and net migration rate are negatively correlated.
+#### We expect the mean age of childbearing to be higher in well-developed societies. Hence, the mean age of childbearing must have increased post the fall of the Berlin Wall in Germany in 1989. While in all the subsequent events which swayed away from democratic systems, and those that occurred in under-developed or developing countries, the mean age of childbearing remained constant or decreased.
 
-* Hypothesis 3: Post the election of Angela Merkel as the first woman Chancellor of Germany in 2005,  the female mortality rate before age 60 has decreased along with it being lower than the male mortality rate before age 60 post Angela Merkel's election.
+<img alt="Mean Child Bearing Age [Germany VS Afghanistan]" src="./Images/Child_bearing_ger_afg.PNG" title="Mean Child Bearing Age [Germany VS Afghanistan]"/>
+<img alt="Mean Child Bearing Age [Germany VS Afghanistan] Table" src="./Images/Child_bearing_ger_afg_table.PNG" title="Mean Child Bearing Age [Germany VS Afghanistan] Table"/>
 
-* Hypothesis 4 : We expect the mean age of childbearing to be higher in well-developed societies. Hence, the mean age of childbearing must have increased post the fall of the Berlin Wall in Germany in 1989. While in all the subsequent events which swayed away from democratic systems, and those that occurred in under-developed or developing countries, the mean age of childbearing decreased.
+<img alt="Mean Child Bearing Age [Germany VS Iraq]" src="./Images/Child_bearing_ger_Iraq.PNG" title="Mean Child Bearing Age [Germany VS Iraq]"/>
+<img alt="Mean Child Bearing Age [Germany VS Iraq] Table" src="./Images/Child_bearing_ger_Iraq_table.PNG" title="Mean Child Bearing Age [Germany VS Iraq] Table"/>
+
+<img alt="Mean Child Bearing Age [Germany VS Myanmar]" src="./Images/Child_bearing_ger_Myan.PNG" title="Mean Child Bearing Age [Germany VS Myanmar]"/>
+<img alt="Mean Child Bearing Age [Germany VS Myanmar] Table" src="./Images/Child_bearing_ger_Myan_table.PNG" title="Mean Child Bearing Age [Germany VS Myanmar] Table"/>
+
+<img alt="Mean Child Bearing Age [Germany VS Libya]" src="./Images/Child_bearing_ger_Libya.PNG" title="Mean Child Bearing Age [Germany VS Libya]"/>
+<img alt="Mean Child Bearing Age [Germany VS Libya] Table" src="./Images/Child_bearing_ger_Libya_table.PNG" title="Mean Child Bearing Age [Germany VS Libya] Table"/>
+
+<img alt="Mean Child Bearing Age [Germany VS Venezuela]" src="./Images/Child_bearing_ger_ven.PNG" title="Mean Child Bearing Age [Germany VS Venezuela]"/>
+<img alt="Mean Child Bearing Age [Germany VS Venezuela] Table" src="./Images/Child_bearing_ger_ven_table.PNG" title="Mean Child Bearing Age [Germany VS Venezuela] Table"/>
 
 
 
