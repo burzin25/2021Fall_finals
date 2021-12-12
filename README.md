@@ -46,7 +46,7 @@ git clone https://github.com/reev277/2021Fall_finals.git
 ## Analysis:
 ### Hypothesis 1
 Colonel Gaddafi, who was widely considered as a cruel dictator, might have impacted the mortality of the country. Hence, below is the first hypothesis.
-#### We expect the adult mortality rate to decrease post the killing of Col Gaddafi in Libya in 2011.
+#### We expect the adult mortality to decrease post the killing of Col Gaddafi in Libya in 2011.
 Mortality all gender means number of deaths over a given period. It is expressed in thousands.
 <img alt="Libya: Mortality from 1950-2020" src="./Images/Libya_Mortality_1950_2020.PNG" title="Libya: Mortality from 1950-2020"/>
 
@@ -55,7 +55,7 @@ The above plot shows the mortality variation with the period of time for Libya a
 
 ### Hypothesis 2
 According to us, people will be less motivated to migrate from a country where there is a higher life expectancy. Hence, below is the second hypothesis.
-#### In most of the cases with an increase in life-expectancy rate, the net migration rate decreases i.e. life-expectancy rate and net migration are negatively correlated
+#### In most of the cases with an increase in life-expectancy, the net migration decreases i.e. life-expectancy and net migration are negatively correlated
 Correlating Life Expectancy with Net Migration
 * Net Migration is calculated as the number of IMMIGRANTS minus the number of EMIGRANTS. Expressed in thousands
 * Life Expectancy is the the average number of years of life of individuals who would be subject to the mortality rates of a given period. It is expressed as years.
@@ -100,7 +100,9 @@ To understand more about the data and the comparison for the hypothesis, below i
 
 #### Observations:
 The above table helps us in getting a better insights of how the mortality rate changes within two events. This can be calculated for any country and social factor due to the dynamic ability of the function. As we can observe, there is 25.84% decrease in the female mortality under 60 after the appointment of first female Chancellor
-The above analysis shows that the hypothesis can be accepted as after Angela Merkel was elected, there is decrease in female mortality under 60 and along with that, there is decrease in the difference of the mortality as well between male and female. One thing to note here is when we were calculating the pre and post of mortality for an event, we are not considering those event period into consideration for the calculation. Due to this, we can observe NaN values for continuous periods as shown in Afghanistan.
+The above analysis shows that the hypothesis can be accepted as after Angela Merkel was elected, there is decrease in female mortality under 60 and along with that, there is decrease in the difference of the mortality as well between male and female.
+
+Note : The NaN values which are shown are due to the fact that no data exists in our dataframe for values before the corresponding period.
 
 ### Hypothesis 4 
 It is a common notion that women in advanced societies bear child in a much older age than the women in underdeveloped or developing countries. Hence, below is the final hypothesis.
@@ -114,13 +116,17 @@ It is a common notion that women in advanced societies bear child in a much olde
 * As expected, the child bearing age of Germany increased whereas it decreased for Afghanistan over the span of years but it started with a constant value for around 3 decades for Afghanistan
 * The value for Germany reduced in the initial phase then started increasing as expected.
 * Thus, we can accept our hypothesis in this case.
+
+Note : The NaNs being displayed for pre and post values in the aforementioned and subsequent dataframes for periods which are not at the extremes, are due to the fact that there are consecutive periods which have events present. Hence, in this case the statistics relating to a particular event are not being considered in either pre or post cases. Instead they are only being used as reference.
+
 <img alt="Mean Child Bearing Age [Germany VS Iraq]" src="./Images/Child_bearing_ger_Iraq.PNG" title="Mean Child Bearing Age [Germany VS Iraq]"/>
 <img alt="Mean Child Bearing Age [Germany VS Iraq] Table" src="./Images/Child_bearing_ger_Iraq_table.PNG" title="Mean Child Bearing Age [Germany VS Iraq] Table"/>
 
 #### Observations
 * The graph for Iraq had certain amount of change. The Child bearning mean age increased till 1985-1990 but then started decreasing with a steep slope and returns back somewhere near to where it started 70 years ago
 * The slope decreases for Iraq towards the end.
-* If we just look at the recent years, we can say our hypothesis is true in this case as well.
+* Even though elections took place in 2006, the mean child bearing age yet kept decreasing. 
+* Thus, we can say our hypothesis can be rejected in this case.
 
 
 <img alt="Mean Child Bearing Age [Germany VS Myanmar]" src="./Images/Child_bearing_ger_Myan.PNG" title="Mean Child Bearing Age [Germany VS Myanmar]"/>
@@ -153,6 +159,8 @@ It is a common notion that women in advanced societies bear child in a much olde
 * Thus we can say that our hypothesis is true in this scenario.
 
 ## Conclusion
+
+By this analysis we come to the conclusion that many of our preconceived notions about the soical factors of various countries and regimes across the world have been debunked. Hence a closer look needs to be taken as to what are the actions taken under certain regimes which are causing the observed effects on the various social parameters studied above.
 
 
 ## References:
