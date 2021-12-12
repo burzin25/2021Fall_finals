@@ -145,10 +145,7 @@ def fetch_events_metadata(df):
 
 
 def plot_linechart(consolidated_df, countries, x, y, value_vars='', var_name='', regex_to_skip='all_gender',
-                   title='', title_font_size=20, line_palette=None,
-                   color_range=None, melt_flag=True, hue=''):
-    if color_range is None:
-        color_range = ['orange', '#cd5700']
+                   title='', title_font_size=20, line_palette=None, melt_flag=True, hue=''):
     if line_palette is None:
         line_palette = ['red', 'green']
     countries_regex_expr = ''
@@ -199,14 +196,14 @@ def plot_linechart(consolidated_df, countries, x, y, value_vars='', var_name='',
     #             arrowprops=dict(facecolor='black', shrink=0.05, headwidth=20, width=7))
     # plt.legend(loc='best')
     plt.legend(bbox_to_anchor=(1.04, 0.5), loc='center left', borderaxespad=0)
-    red = Color(color_range[0])
-    colors = list(red.range_to(Color(color_range[1]), len(periods)))
     texts = []
-    for period, color, event, year in zip(periods, colors, events, years):
+    for period, event, year in zip(periods, events, years):
         xtick = period_series[period_series == period].index[0]
         # print(xtick,period)
-        plt.axvline(x=xtick, color=str(color), linestyle='-.', label=event + ' [' + year + ']')
-        texts.append(plt.text(xtick, (ymax + ymin) / 2, event + ' [' + year + ']',
+        label_country=plot_df[plot_df['Event'] == event]['Country'].iloc[0]
+        assign_label='('+label_country+') '+event + ' [' + year + ']'
+        plt.axvline(x=xtick, color='orange', linestyle='-.', label=assign_label)
+        texts.append(plt.text(xtick, (ymax + ymin) / 2, assign_label,
                               rotation=90, verticalalignment='center'))
     adjust_text(texts, only_move={'texts': 'y'})
     # plt.plot()
