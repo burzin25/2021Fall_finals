@@ -40,7 +40,7 @@ git clone https://github.com/reev277/2021Fall_finals.git
 ├── <strong>Data:</strong> Data files<br/>
 ├── <strong>Images:</strong> Images of plots for README file<br/>
 ├── <strong>functions.py:</strong> Functions to perform the desired analysis<br/>
-├── <strong>PR_PROJECT.ipynb:</strong> Analysis and Hypotheses testing<br/>
+├── <strong>PR_PROJECT-4.ipynb:</strong> Analysis and Hypotheses testing<br/>
 └── <strong>README.md</strong>
 
 ## Analysis:
