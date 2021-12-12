@@ -6,12 +6,79 @@ from colour import Color
 from matplotlib.patches import Patch
 from adjustText import adjust_text
 
+def form_dataframe(filepath:str, sheet:str, header:int) -> pd.DataFrame:
+    """
+    Reads a excel file and returns the Dataframe
 
-def transform_dataframe(df: pd.DataFrame, countries, df_name, from_column, to_column, prefix, sep,
-                        rename_flag) -> pd.DataFrame:
+    :param str filepath: Path of excel file
+    :param str sheet: Sheet name present in excel file
+    :param int header: Line number to be considered as header
+    :return: Dataframe containing the read data
+
+    >>> form_dataframe('abc.xslx','Sheet1',0) # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    FileNotFoundError...
+
+    >>> form_dataframe('data/events_table.xlsx',1,0) # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    ValueError...
+
+    >>> form_dataframe('data/events_table.xlsx','Sheet1',0) # doctest: +ELLIPSIS
+                                   Country  ...                                        Description
+    ...
+
+    >>> df = form_dataframe('data/WPP2019_MORT_F03_1_DEATHS_BOTH_SEXES.xlsx','ESTIMATES',16)
+
+    """
+    try:
+        data = pd.read_excel(filepath, sheet_name=sheet, header=header)
+    except FileNotFoundError:
+        raise FileNotFoundError
+    except Exception as e:
+        raise e
+    return data
+
+def transform_dataframe(df: pd.DataFrame, countries:list, df_name:str, from_column:int, to_column:int, prefix:str, sep:str,
+                        rename_flag:bool) -> pd.DataFrame:
     """
     Returns a transformed dataframe which contains a subset interested countries along with the corresponding region
     of each of the countries.
+
+    :param pd.DataFrame df: Dataframe to transform
+    :param list countries: List of countries
+    :param str df_name: Name attribute of the Dataframe
+    :param int from_column: Starting Index of Dataframe.columns for renaming columns
+    :param int to_column: Ending Index of Dataframe.columns for renaming columns [to include]
+    :param str prefix: Prefix of the renamed columns
+    :param str sep: Separator for renamed columns
+    :param bool rename_flag: Indicating whether to rename columns
+    :return: Transformed DataFrame
+
+    >>> transform_dataframe(form_dataframe('data/WPP2019_MORT_F03_1_DEATHS_BOTH_SEXES.xlsx','ESTIMATES',16), ['Iraq','Myanmar','Afghanistan','Libya','Germany','Venezuela'],'mortality_all_gender', 0, 0, '', ' ', False) # doctest: +ELLIPSIS
+         Index    Variant      Country  ...  2010-2015 2015-2020          Region
+    ...
+
+    >>> transform_dataframe(form_dataframe('data/WPP2019_MORT_F04_1_DEATHS_BY_AGE_BOTH_SEXES.xlsx',\
+                                       'ESTIMATES',\
+                                       16),\
+                                       ['Iraq','Myanmar','Afghanistan','Libya','Germany','Venezuela'],\
+                                       'mortality_by_age',\
+                                   from_column=7,to_column=-1,prefix='',sep=' ',rename_flag=True) # doctest: +ELLIPSIS
+           Index    Variant  ... mortality_by_age 95+          Region
+    ...
+
+    >>> transform_dataframe(form_dataframe('data/WPP2019_MORT_F04_1_DEATHS_BY_AGE_BOTH_SEXES.xlsx',\
+                                       'ESTIMATES',\
+                                       16),\
+                                       ['Iraq','Myanmar','Afghanistan','Libya','Germany','Venezuela'],\
+                                       '_by_age',\
+                                   from_column=7000.1,to_column=-1,prefix='',sep=' ',rename_flag=True) # doctest: +ELLIPSIS
+    Traceback (most recent call last):
+    ...
+    TypeError:...
+
     """
     # countries_regex_expr='' countries_regex_expr=countries_regex_expr.join(val+'|' if i != len(countries)-1 else
     # val for i,val in enumerate(countries)) filter=df['Region, subregion, country or area *'].str.contains(
@@ -38,7 +105,25 @@ def transform_dataframe(df: pd.DataFrame, countries, df_name, from_column, to_co
     return df
 
 
-def rename_columns(df, from_column, to_column, prefix, sep):
+def rename_columns(df:pd.DataFrame, from_column:int, to_column:int, prefix:str, sep:str) -> pd.DataFrame:
+    """
+    Renames the columns of a Dataframe
+
+    :param pd.DataFrame df: Dataframe
+    :param int from_column: Starting Index of Dataframe.columns for renaming columns
+    :param int to_column: Ending Index of Dataframe.columns for renaming columns [to include]
+    :param str prefix: Prefix of the renamed columns
+    :param str sep: Separator for renamed columns
+    :return: Renamed Dataframe
+
+    >>> rename_columns(form_dataframe('data/WPP2019_MORT_F04_1_DEATHS_BY_AGE_BOTH_SEXES.xlsx',\
+                                       'ESTIMATES',\
+                                       16),\
+                                   from_column=7,to_column=-1,prefix='ET_',sep=' ') # doctest: +ELLIPSIS
+          Index    Variant  ... ET_ 90-94      95+
+    ...
+
+    """
     rename_dict = {}
     for column in df.columns[from_column:to_column]:
         rename_dict[column] = prefix + sep + column
@@ -46,17 +131,37 @@ def rename_columns(df, from_column, to_column, prefix, sep):
     return df
 
 
-def form_dataframe(filepath, sheet, header):
-    data = pd.read_excel(filepath, sheet_name=sheet, header=header)
-    # display(data.head().append(data.tail()))
-    return data
+def check_null_columns(df:pd.DataFrame) -> list:
+    """
+    Returns a list of columns containing any null values
 
+    :param pd.DataFrame df: Dataframe
+    :return: List of columns containing any null values
 
-def check_null_columns(df):
+    >>> check_null_columns(form_dataframe('data/WPP2019_MORT_F04_1_DEATHS_BY_AGE_BOTH_SEXES.xlsx',\
+                                       'ESTIMATES',\
+                                       16)) # doctest: +ELLIPSIS
+    [...
+
+    """
     return df.columns[df.isna().any()].tolist()
 
 
-def get_melted_dataframes(list_df):
+def get_melted_dataframes(list_df:list) -> list:
+    """
+    Forms a list of melted dataframes
+
+    :param list list_df: List of dataframes to be appended to the list
+    :return: List of dataframes
+
+    >>> get_melted_dataframes([\
+    display_dataframe('data/WPP2019_MORT_F03_1_DEATHS_BOTH_SEXES.xlsx','ESTIMATES',\
+    16,['Iraq','Myanmar','Afghanistan','Libya','Germany','Venezuela'],\
+    'mortality_all_gender')]) # doctest: +ELLIPSIS
+    Columns containing null values :...
+    ...
+
+    """
     ret_list = []
     for df in list_df:
         ret_list.append(df.melt(id_vars=[df.columns[2],
@@ -67,15 +172,43 @@ def get_melted_dataframes(list_df):
     return ret_list
 
 
-def display_dataframe(filepath, sheet, header, countries, df_name, from_column=0, to_column=0, prefix='', sep=' ',
-                      rename_flag=False):
+def display_dataframe(filepath:str, sheet:str, header:str, countries:list, df_name:str, from_column:int=0, to_column:int=0, prefix:str='', sep:str=' ',
+                      rename_flag:bool=False):
+    """
+    Loads the contents of the given excel file into a transformed and prints the columns containing null values
+
+    :param str filepath: Path of excel file
+    :param str sheet: Sheet Name
+    :param int header: Line Number to be considered as header
+    :param list countries: List of countries
+    :param str df_name: Name attribute of the Dataframe
+    :param int from_column: Starting Index of Dataframe.columns for renaming columns
+    :param int to_column: Ending Index of Dataframe.columns for renaming columns [to include]
+    :param str prefix: Prefix of the renamed columns
+    :param str sep: Separator for renamed columns
+    :param bool rename_flag: Indicating whether to rename columns
+    :return: Transformed Dataframe
+
+    >>> display_dataframe('data/WPP2019_MORT_F03_1_DEATHS_BOTH_SEXES.xlsx',\
+    'ESTIMATES',16,['Iraq','Myanmar','Afghanistan','Libya','Germany','Venezuela']\
+    ,'mortality_all_gender') # doctest: +ELLIPSIS
+    Columns containing null values...
+    ...
+
+    """
     df = form_dataframe(filepath, sheet, header)
     df = transform_dataframe(df, countries, df_name, from_column, to_column, prefix, sep, rename_flag)
     print('Columns containing null values : {}'.format(check_null_columns(df)))
     return df
 
 
-def get_finalized_df(stat_dataframes, stat2_dataframes):
+def get_finalized_df(stat_dataframes:list, stat2_dataframes:list) -> pd.DataFrame:
+    """
+    Merges the acquired list of dataframes using ['Country', 'Region', 'Period']
+    :param list stat_dataframes: List of standard dataframes
+    :param list stat2_dataframes: List of dataframes which contain renamed columns
+    :return: Meged Dataframe
+    """
     main_df = pd.DataFrame()
     for i, df in enumerate(stat_dataframes):
         if i < len(stat_dataframes) - 1:
@@ -88,8 +221,23 @@ def get_finalized_df(stat_dataframes, stat2_dataframes):
     return main_df
 
 
-def plot_barchart(consolidated_df, country, x, y, title, xaxis_label="", yaxis_label="", title_font_size=20,
-                  std_color='indigo', color_range=None):
+def plot_barchart(consolidated_df:pd.DataFrame, country:str, x:str, y:str, title:str, xaxis_label:str="", yaxis_label:str="", title_font_size:str=20,
+                  std_color:str='indigo', color_range:list=None) -> None:
+    """
+    Plots the barchart using the provided attributes and calculates the % change in the y attribute before and after each event
+
+    :param pd.DataFrame consolidated_df: Dataframe to be used to plot the barchart
+    :param str country: The country for which the plot needs to be created
+    :param str x: Column of Dataframe to be used as X axis
+    :param str y: Column of Dataframe to be used as Y axis
+    :param str title: Title of the plot
+    :param str xaxis_label: X-axis label
+    :param str yaxis_label: Y-axis label
+    :param str title_font_size: Font size of Title
+    :param str std_color: Color of the non-event bars
+    :param list color_range: Color range of the event bars
+    :return: None
+    """
     if color_range is None:
         color_range = ['orange', '#cd5700']
     consolidated_country = consolidated_df.loc[consolidated_df['Country'] == country]
@@ -110,7 +258,6 @@ def plot_barchart(consolidated_df, country, x, y, title, xaxis_label="", yaxis_l
     # g.set_titles('Libya: Mortality from 1950-2020')
     plt.title(title, fontsize=title_font_size)
     g.set(xlabel=xaxis_label, ylabel=yaxis_label)
-    # create color map with colors and df.names
     cmap = dict(zip(consolidated_country[consolidated_country['Period'].isin(periods)].Event + ' [' +
                     consolidated_country[consolidated_country['Period'].isin(periods)].Year + ']',
                     colors))
@@ -135,8 +282,14 @@ def plot_barchart(consolidated_df, country, x, y, title, xaxis_label="", yaxis_l
         # change_dict[event]=change
 
 
-# find periods where events have occured, so as to highlight in the graph:
-def fetch_events_metadata(df):
+
+def fetch_events_metadata(df:pd.DataFrame) -> (list,list,list):
+    """
+    Find periods and years where events have occurred from a dataframe
+
+    :param df: Dataframe from which events need to listed
+    :return: Returns 3 lists  containing the corresponding periods,events and years
+    """
     stats_with_events = df[df['Event'].notna()]
     periods = stats_with_events['Period'].tolist()
     events = stats_with_events['Event'].tolist()
@@ -144,8 +297,24 @@ def fetch_events_metadata(df):
     return periods, events, years
 
 
-def plot_linechart(consolidated_df, countries, x, y, value_vars='', var_name='', regex_to_skip='all_gender',
-                   title='', title_font_size=20, line_palette=None, melt_flag=True, hue=''):
+def plot_linechart(consolidated_df:pd.DataFrame, countries:list, x:str, y:str, value_vars:list=[], var_name:str='', regex_to_skip:str='all_gender',
+                   title:str='', title_font_size:int=20, line_palette:list=None, melt_flag:bool=True, hue:str=''):
+    """
+    Plots the linechart from the given Dataframe and attibutes
+    :param consolidated_df: Dataframe to be used to plot the linechart
+    :param countries: List of countries for which the plot needs to be created
+    :param x: Column of Dataframe to be used as X axis
+    :param y: Column of Dataframe to be used as Y axis
+    :param value_vars: columns to unpivot.
+    :param var_name: Name of the variable column in melted dataframe
+    :param regex_to_skip: Regex to skip in melting the column
+    :param title: Title of the plot
+    :param title_font_size: Font size of Title
+    :param line_palette: Colors to be used to plot the linechart
+    :param melt_flag: Indicates whether to melt the dataframe
+    :param hue: Grouping variable to plot different countries
+    :return: None
+    """
     if line_palette is None:
         line_palette = ['red', 'green']
     countries_regex_expr = ''
@@ -211,7 +380,12 @@ def plot_linechart(consolidated_df, countries, x, y, value_vars='', var_name='',
     # plt.close()
 
 
-def impute_regions(consolidated_df):
+def impute_regions(consolidated_df:pd.DataFrame) -> None:
+    """
+    Imputes the Region columns containing null values with the corresponding region
+    :param consolidated_df: Dataframe
+    :return: None
+    """
     for country in consolidated_df['Country'].unique():
         filter = consolidated_df['Country'] == country
         regions = consolidated_df.loc[filter, 'Region']
@@ -220,12 +394,23 @@ def impute_regions(consolidated_df):
         consolidated_df.loc[filter, 'Region'] = regions.fillna(impute_value)
 
 
-def calculate_percent_change(consolidated_df, countries,
-                             level_two,
-                             calc_attrs,
-                             level_two_name='',
-                             pre_name='Pre',
-                             post_name='Post'):
+def calculate_percent_change(consolidated_df:pd.DataFrame, countries:list,
+                             level_two:list,
+                             calc_attrs:list,
+                             level_two_name:str='',
+                             pre_name:str='Pre',
+                             post_name:str='Post') -> pd.DataFrame:
+    """
+    Creates a dataframe which contains the percent change for given attributes
+    :param consolidated_df: Dataframe
+    :param countries: Countries for which the dataframe needs to be filtered
+    :param level_two: List of names to be assigned to level two of the multi-index
+    :param calc_attrs: Columns for which the percentage change needs to be calculated
+    :param level_two_name: Level two header of the multi-index
+    :param pre_name: Name of the column containing the pre values wrt reference
+    :param post_name: Name of the column containing the post values wrt reference
+    :return: Dataframe which contains the percent change for given attributes
+    """
     list_of_dfs = []
     for country in countries:
         tmp_df = consolidated_df.loc[consolidated_df['Country'].str.contains(country)].copy()
@@ -272,7 +457,19 @@ def calculate_percent_change(consolidated_df, countries,
     return major_df
 
 
-def plot_correlation(consolidated_df, country, x, y, hue, title, text_flag=True, text_pos=None):
+def plot_correlation(consolidated_df:pd.DataFrame, country:str, x:str, y:str, hue:str, title:str, text_flag:bool=True, text_pos:list=None) -> None:
+    """
+    Plots the correlation plot of the given attributes
+    :param consolidated_df: Dataframe
+    :param country: Country for which plots needs to be created
+    :param x: Column of Dataframe to be used as X axis
+    :param y: Column of Dataframe to be used as Y axis
+    :param hue: Grouping variable
+    :param title: Title of the plot
+    :param text_flag: Flag which indicates whether correlation coefficient needs to be displayed on the graph
+    :param text_pos: The position of the correlation coefficient on the graph
+    :return: None
+    """
     # sns.scatterplot(data=df,
     #                 x=x,
     #                 y=y,hue=hue,s=100)
