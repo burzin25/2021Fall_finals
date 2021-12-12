@@ -21,8 +21,13 @@ Data Source:
           * https://www.bbc.com/news/world-latin-america-19652436
           * https://www.bbc.com/news/world-europe-17301646
           * https://www.bbc.co.uk/news/world-africa-13755445
+## Description
 
-Over the course of human history, many regime changes, in the form of revolutions, coups, or a much more peaceful transition of governing power and ideology, have taken place in different parts of the world. Since such drastic changes invariably leave a mark on society, it would be interesting to analyze a few of those factors affecting the country and draw a comparison of the influence on these between countries.
+August 2021, U.S. officially withdraws from Afghanistan after 20 years. Ever since U.S. announced its withdrawl policy from Afghanistan, and post its hasty withdrawl, there seems to be a common belief amongst the masses that, following the takeover by Taliban, there will be widespread anarchy and destruction of social compass of society. Only time will tell us how gruesome this takeover by taliban turns out to be. 
+    
+Through this project, we aim to verify the affects of such drastic regime changes which have occured in last 70 years in some of the countries of the world. 
+    
+We are referring to the data archive provided by the United Nations: Department of Economic and Social Affairs. 
 
 We have planned to explore and correlate some of the following characteristics:
 
