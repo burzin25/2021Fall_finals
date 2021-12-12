@@ -91,10 +91,14 @@ Since Angela Merkel was the First Woman Chancellor of Germany elected in 2005, i
 
 #### Post the election of Angela Merkel as the first woman Chancellor of Germany in 2005, the female mortality rate before age 60 has decreased along with it being lower than the male mortality rate before age 60, post Angela Merkel's election.
 <img alt="Germany Mortality before 60 [Male VS Female]" src="./Images/Germany_mortality_m_f_bf_60.PNG" title="Germany Mortality before 60 [Male VS Female]"/>
+
+#### Observations:
 In the above visuals, we can observe that there is continuous decrease in the mortality before 60 for both males and females. The vertical dashed lines show the regime changes in Germany. While pondering upon the data, we can observe that after the election of Angela Merkel as the first Chancellor, the female mortality under 60 has decreased. Also we can notice from the graph that the difference between the male and female mortality under 60 has decreased.
 To understand more about the data and the comparison for the hypothesis, below is a table which depicts the percentage increase/decrease in the pre/post event.
 
 <img alt="Germany Mortality before 60 [Male VS Female] Table" src="./Images/Germany_mortality_m_f_bf_60_table.PNG" title="Germany Mortality before 60 [Male VS Female] Table"/>
+
+#### Observations:
 The above table helps us in getting a better insights of how the mortality rate changes within two events. This can be calculated for any country and social factor due to the dynamic ability of the function. As we can observe, there is 25.84% decrease in the female mortality under 60 after the appointment of first female Chancellor
 The above analysis shows that the hypothesis can be accepted as after Angela Merkel was elected, there is decrease in female mortality under 60 and along with that, there is decrease in the difference of the mortality as well between male and female. One thing to note here is when we were calculating the pre and post of mortality for an event, we are not considering those event period into consideration for the calculation. Due to this, we can observe NaN values for continuous periods as shown in Afghanistan.
 
@@ -106,18 +110,49 @@ It is a common notion that women in advanced societies bear child in a much olde
 <img alt="Mean Child Bearing Age [Germany VS Afghanistan]" src="./Images/Child_bearing_ger_afg.PNG" title="Mean Child Bearing Age [Germany VS Afghanistan]"/>
 <img alt="Mean Child Bearing Age [Germany VS Afghanistan] Table" src="./Images/Child_bearing_ger_afg_table.PNG" title="Mean Child Bearing Age [Germany VS Afghanistan] Table"/>
 
+#### Observations:
+* As expected, the child bearing age of Germany increased whereas it decreased for Afghanistan over the span of years but it started with a constant value for around 3 decades for Afghanistan
+* The value for Germany reduced in the initial phase then started increasing as expected.
+* Thus, we can accept our hypothesis in this case.
 <img alt="Mean Child Bearing Age [Germany VS Iraq]" src="./Images/Child_bearing_ger_Iraq.PNG" title="Mean Child Bearing Age [Germany VS Iraq]"/>
 <img alt="Mean Child Bearing Age [Germany VS Iraq] Table" src="./Images/Child_bearing_ger_Iraq_table.PNG" title="Mean Child Bearing Age [Germany VS Iraq] Table"/>
+
+#### Observations
+* The graph for Iraq had certain amount of change. The Child bearning mean age increased till 1985-1990 but then started decreasing with a steep slope and returns back somewhere near to where it started 70 years ago
+* The slope decreases for Iraq towards the end.
+* If we just look at the recent years, we can say our hypothesis is true in this case as well.
+
 
 <img alt="Mean Child Bearing Age [Germany VS Myanmar]" src="./Images/Child_bearing_ger_Myan.PNG" title="Mean Child Bearing Age [Germany VS Myanmar]"/>
 <img alt="Mean Child Bearing Age [Germany VS Myanmar] Table" src="./Images/Child_bearing_ger_Myan_table.PNG" title="Mean Child Bearing Age [Germany VS Myanmar] Table"/>
 
+
+#### Observations
+* In case of Myanmar, the child bearing age started increasing with Germany in period 1975-1980
+* Then towards the recent years, the bearing age for Myanmar has reduced.
+* The bearing age for Germany in start of the 1950s was less than Myanmar, but it later turns out to more towards the end of 2020
+* Thus, we can not clearly reject the hyothesis here as there is no significant change for Myanmar.
+
+
 <img alt="Mean Child Bearing Age [Germany VS Libya]" src="./Images/Child_bearing_ger_Libya.PNG" title="Mean Child Bearing Age [Germany VS Libya]"/>
 <img alt="Mean Child Bearing Age [Germany VS Libya] Table" src="./Images/Child_bearing_ger_Libya_table.PNG" title="Mean Child Bearing Age [Germany VS Libya] Table"/>
+
+
+#### Observations
+* In case of Libya, the trend is totally opposite to our expectations.
+* The child bearing age is more than Germany from start to end.
+* There is a slight decrease in the child bearing age for Libya towards the end of period 2015-2020
+* Thus, we can reject the hypothesis in this case.
 
 <img alt="Mean Child Bearing Age [Germany VS Venezuela]" src="./Images/Child_bearing_ger_ven.PNG" title="Mean Child Bearing Age [Germany VS Venezuela]"/>
 <img alt="Mean Child Bearing Age [Germany VS Venezuela] Table" src="./Images/Child_bearing_ger_ven_table.PNG" title="Mean Child Bearing Age [Germany VS Venezuela] Table"/>
 
+
+#### Observations
+* The Child bearing age of Venezuela has decreased drastically over the span of time.
+* Thus we can say that our hypothesis is true in this scenario.
+
+## Conclusion
 
 
 ## References:
