@@ -96,7 +96,7 @@ Since Angela Merkel was the First Woman Chancellor of Germany elected in 2005, i
 In the above visuals, we can observe that there is continuous decrease in the mortality before 60 for both males and females. The vertical dashed lines show the regime changes in Germany. While pondering upon the data, we can observe that after the election of Angela Merkel as the first Chancellor, the female mortality under 60 has decreased. Also we can notice from the graph that the difference between the male and female mortality under 60 has decreased.
 To understand more about the data and the comparison for the hypothesis, below is a table which depicts the percentage increase/decrease in the pre/post event.
 
-<img alt="Germany Mortality before 60 [Male VS Female] Table" src="./Images/Germany_mortality_m_f_bf_60_table.PNG" title="Germany Mortality before 60 [Male VS Female] Table"/>
+<img alt="Germany Mortality before 60 [Male VS Female] Table" src="./Images/germ_mort_pct.png" title="Germany Mortality before 60 [Male VS Female] Table"/>
 
 #### Observations:
 The above table helps us in getting a better insights of how the mortality rate changes within two events. This can be calculated for any country and social factor due to the dynamic ability of the function. As we can observe, there is 25.84% decrease in the female mortality under 60 after the appointment of first female Chancellor
